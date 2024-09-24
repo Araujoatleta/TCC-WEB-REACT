@@ -1,43 +1,25 @@
-import { Routes, Route } from "react-router-dom"
-import App from "../templates/App/App"
-import Home from "../templates/Home/Home"
 
-import ForgotPass from "../templates/Login/ForgotPass"
-import Login from "../templates/Login/Login"
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Cadastro from '../templates/Login/Cadastro';
+import Carrossel from '../templates/Login/Carrosel';
+import Login from '../templates/Login/Login';
+import Senha from '../templates/Login/Senha';
+import Admin from '../templates/Login/Admin';
 
-import Mensagem from "../templates/Mensagem/Mensagem"
-import MensagemLer from "../templates/Mensagem/MensagemLer"
-
-import Usuario from "../templates/Usuario/Usuario"
-import UsuarioEditar from "../templates/Usuario/UsuarioEditar"
-import UsuarioNovo from "../templates/Usuario/UsuarioNovo"
-import UsuariosLista from "../templates/Usuario/UsuariosLista"
-
-import Cadastro from "../templates/Login/Cadastro"
-
-
-const AppRoutes = () => {
+function App() {
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/cadastro" element={<Cadastro />} />
-        <Route path="/forgotpass" element={<ForgotPass />} />
-
-        <Route path="/mensagem" element={<Mensagem />} />
-        <Route path="/mensagemler" element={<MensagemLer />} />
-
-
-        <Route path="/usuario" element={<Usuario />} />
-        <Route path="/usuarioslista" element={<UsuariosLista />} />
-        <Route path="/usuarionovo" element={<UsuarioNovo />} />
-        <Route path="/usuarioeditar/:id" element={<UsuarioEditar />} />
-
-
-      </Routes>
-    </div>
-  )
+    <Router>
+      <Switch>
+        <Route path="/cadastro" component={Cadastro} />
+        <Route path="/carrossel" component={Carrossel} />
+        <Route path="/login" component={Login} />
+        <Route path="/senha" component={Senha} />
+        <Route path="/admin" component={Admin} />
+        <Route path="/" exact component={Carrossel} />
+      </Switch>
+    </Router>
+  );
 }
-export default AppRoutes
+
+export default App;

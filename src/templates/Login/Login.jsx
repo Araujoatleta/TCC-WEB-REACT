@@ -1,48 +1,22 @@
-import { Link, useNavigate } from "react-router-dom";
-import './Login.css';
-const Login = () => {
 
+import React from 'react';
+import './Login.css'; // Estilos específicos de login
 
+function Login() {
+  return (
+    <div className="login-container">
+      <h2>Login</h2>
+      <form>
+        <label htmlFor="email">Email:</label>
+        <input type="email" id="email" name="email" />
 
+        <label htmlFor="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" />
 
-    return (
-        <div class="wrapper">
-    <section>
-      <div class="form-box">
-        <div class="form-value">
-          <form action="">
-            <h2>Login</h2>
-            <div class="inputbox">
-              <ion-icon name="mail-outline"></ion-icon>
-              <input type="email" required/>
-              <label for="">Email</label>
-            </div>
-            <div class="inputbox">
-              <ion-icon name="lock-closed-outline"></ion-icon>
-              <input type="password" required/>
-              <label for="">Password</label>
-            </div>
-            <div class="forget">
-              <label>
-                <input type="checkbox"/> Remember me
-              </label>
-              <label>
-                <a href="../Senha/index.html">Forgot password?</a>
-              </label>
-            </div>
-            <Link to={'/home'}
-          className='btn btn-sm btn-warning'>
-          Acesso Restrito
-        </Link>
-            <div class="register">
-              <p>Don't have a account ?  <Link to={'/cadastro'}>Register</Link></p>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-  </div>
-    )
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+  );
 }
 
-export default Login
+export default Login;
